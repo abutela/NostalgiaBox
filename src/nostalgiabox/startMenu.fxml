@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nostalgiabox.NostalgiaBoxController">
+<children>
+      <StackPane id="livingRoomPane" prefHeight="375.0" prefWidth="640.0">
+         <children>
+            <ImageView id="livingRoomBG" fx:id="startMenuBG" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../images/menubg.png" />
+               </image>
+               <effect>
+                  <BoxBlur height="15.0" iterations="2" width="15.0" />
+               </effect>
+            </ImageView>
+            <Pane id="menuPane" fx:id="startMenuPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
+               <children>
+                  <Rectangle id="menuRect" fx:id="menuPane" arcHeight="5.0" arcWidth="5.0" fill="#fff5e9" height="662.0" layoutX="406.0" layoutY="32.0" stroke="#614627" strokeType="INSIDE" width="498.0" />
+                  <Pane id="contentPane" fx:id="contentMenuPane" layoutX="427.0" layoutY="180.0" prefHeight="206.0" prefWidth="457.0" style="-fx-border-color: #5c3b1d;">
+                     <children>
+                        <Pane id="decadePane" fx:id="decadeMenuPane" layoutX="21.0" layoutY="20.0" prefHeight="167.0" prefWidth="136.0" style="-fx-border-color: #5c3b1d;">
+                           <children>
+                              <RadioButton id="seventies" fx:id="rbSeventies" layoutX="26.0" layoutY="21.0" lineSpacing="10.0" mnemonicParsing="false" selected="true" text="70s" textFill="#5c3b1d">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="decade" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="ninenties" fx:id="rbNineties" layoutX="26.0" layoutY="122.0" lineSpacing="10.0" mnemonicParsing="false" text="90s" textFill="#5c3b1d" toggleGroup="$decade">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton id="eighties" fx:id="rbEighties" layoutX="26.0" layoutY="71.0" lineSpacing="10.0" mnemonicParsing="false" text="80s" textFill="#5c3b1d" toggleGroup="$decade">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </Pane>
+                        <Label id="decadeLabel" layoutX="14.0" layoutY="10.0" style="-fx-background-color: #fff5e9;" text="Decade" textFill="#5c3b1d">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane id="xmasPane" layoutX="175.0" layoutY="20.0" prefHeight="167.0" prefWidth="261.0" style="-fx-border-color: #5c3b1d;" fx:id="xmasMenuPane">
+                           <children>
+                              <RadioButton id="no_xmas" fx:id="rbNoXmas" layoutX="15.0" layoutY="21.0" lineSpacing="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="254.0" selected="true" text="No Christmas" textFill="#5c3b1d">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="xmas" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="yes_xmas" fx:id="rbYesXmas" layoutX="14.0" layoutY="71.0" lineSpacing="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="254.0" text="Yes Christmas" textFill="#5c3b1d" toggleGroup="$xmas">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton id="only_xmas" fx:id="rbOnlyXmas" layoutX="79.0" layoutY="122.0" lineSpacing="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="169.0" text="Only Christmas" textFill="#5c3b1d" toggleGroup="$xmas">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <Label id="xmasLabel" layoutX="10.0" layoutY="-8.0" style="-fx-background-color: #fff5e9;" text="Christmassy?" textFill="#5c3b1d">
+                                 <font>
+                                    <Font name="Georgia Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane id="ambiancePane" fx:id="ambianceMenuPane" layoutX="427.0" layoutY="411.0" prefHeight="191.0" prefWidth="457.0" style="-fx-border-color: black;">
+                     <children>
+                        <Pane id="whenPane" fx:id="whenMenuPane" layoutX="20.0" layoutY="20.0" prefHeight="152.0" prefWidth="210.0" style="-fx-border-color: #574934;">
+                           <children>
+                              <RadioButton id="morningRadio" fx:id="rbMorning" layoutX="27.0" layoutY="24.0" lineSpacing="10.0" mnemonicParsing="false" selected="true" text="Morning" textFill="#5c3b1d">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="when" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="noonRadio" fx:id="rbNoon" layoutX="27.0" layoutY="64.0" lineSpacing="10.0" mnemonicParsing="false" text="Noon" textFill="#5c3b1d" toggleGroup="$when">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton id="nightRadio" fx:id="rbNight" layoutX="27.0" layoutY="104.0" lineSpacing="10.0" mnemonicParsing="false" text="Night" textFill="#5c3b1d" toggleGroup="$when">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <Label id="whenLabel" layoutX="12.0" layoutY="-7.0" style="-fx-background-color: #fff5e9;" text="When?" textFill="#5c3b1d">
+                                 <font>
+                                    <Font name="Georgia Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane id="roomPane" fx:id="roomMenuPane" layoutX="248.0" layoutY="20.0" prefHeight="152.0" prefWidth="188.0" style="-fx-border-color: #574934;">
+                           <children>
+                              <RadioButton id="cozyRadio" fx:id="rbCozy" disable="true" layoutX="36.0" layoutY="44.0" mnemonicParsing="false" text="Cozy" textFill="#5c3b1d">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="room" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton id="bigTVRadio" fx:id="rbBigTV" disable="true" layoutX="36.0" layoutY="84.0" mnemonicParsing="false" text="Big TV" textFill="#5c3b1d" toggleGroup="$room">
+                                 <font>
+                                    <Font name="Century" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <Label id="roomLabel" layoutX="14.0" layoutY="-7.0" style="-fx-background-color: #fff5e9;" text="Room" textFill="#5c3b1d">
+                                 <font>
+                                    <Font name="Georgia Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="108.0" prefHeight="32.0" prefWidth="154.0" text="Coming soon!" textAlignment="CENTER" textFill="#9a1313">
+                                 <font>
+                                    <Font name="Bell MT" size="26.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Label id="contentLabel" layoutX="427.0" layoutY="172.0" style="-fx-background-color: #fff5e9;" text="Content" textFill="#5c3b1dcb">
+                     <font>
+                        <Font name="Rockwell Extra Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button id="startbtn" fx:id="btnStart" layoutX="571.0" layoutY="629.0" mnemonicParsing="false" onAction="#btnStartListener" prefHeight="47.0" prefWidth="169.0" style="-fx-background-color: DARKRED;" text="It's TV time!" textFill="#fce8e8">
+                     <font>
+                        <Font name="Lucida Fax Demibold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label id="ambianceLabel" layoutX="427.0" layoutY="402.0" style="-fx-background-color: #fff5e9;" text="Ambiance" textFill="#5c3b1dcc">
+                     <font>
+                        <Font name="Rockwell Extra Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="NBMenuLabel" layoutX="427.0" layoutY="44.0" prefHeight="32.0" prefWidth="188.0" text="Nostalgia Box" textAlignment="CENTER" textFill="#5c3b1da2">
+                     <font>
+                        <Font name="Rockwell Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="infoMenuLabel" layoutX="437.0" layoutY="89.0" lineSpacing="2.0" prefHeight="74.0" prefWidth="437.0" text="Picture it: childhood, grandma's house. You're cozied up and ready &#10;for some TV time. Is it morning, watching cartoons? Night, and &#10;you've  found a movie you shouldn't be watching? What's your cozy&#10;place? Pick some settings, and let NostalgiaBox bring you back." textAlignment="CENTER" textFill="#5c3b1de9" textOverrun="CLIP">
+                     <font>
+                        <Font name="Rockwell" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+</children>
+</AnchorPane>

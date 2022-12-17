@@ -1,51 +1,63 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//////////////////////////////////////
+//      Ashley Butela presents      //
+//       A CIT-244 Production       //
+//        December 16th, 2022       //
+//////////////////////////////////////
+
 package nostalgiabox;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.animation.FadeTransition;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-/**
- *
- * @author Ashley-PC
- */
-public class NostalgiaBox extends Application {
-    
-    @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+public class NostalgiaBox extends Application {    
+
+    @Override 
+    public void start(Stage stage) throws InterruptedException, IOException{
+            Image splash = new Image("images/splash.png",1280,720,false,false);
+            ImageView splashView = new ImageView(splash);
+            Pane test = new Pane(splashView);
+            Scene scene = new Scene(test, 1280,720);
             
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+            stage.setTitle("NostalgiaBox - Cozy TV Time at Grandma's");
+            stage.setScene(scene);
+            stage.show();
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
+
+            FadeTransition ft = new FadeTransition(Duration.millis(5000), splashView);
+            ft.setFromValue(0.0);
+            ft.setToValue(1.0);
+            ft.setOnFinished(e -> {
+                try {
+                    stage.setScene(createScene(getPane("startMenu.fxml")));
+                } catch (IOException ex) {
+                    Logger.getLogger(NostalgiaBox.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
+            ft.play();
     }
     
+    public Pane getPane(String fxmlFile) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        
+        Pane mainPane = loader.load(getClass().getResource(fxmlFile));
+        
+        return mainPane;
+    }
+    
+    private Scene createScene(Pane mainPane) {
+        Scene scene = new Scene(mainPane);
+        
+        return scene;
+    }
 }
+
