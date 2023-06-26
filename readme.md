@@ -1,4 +1,4 @@
-## NostalgiaBox - Cozy TV at Grandma's
+## NostalgiaBox - Cozy TV Time at Grandma's
 ![screenshot of NostalgiaBox showing The Pink Panther cartoon in a 70s living room](pinkpanther.png)
 
 # What is this?
