@@ -1,5 +1,5 @@
 ## NostalgiaBox - Cozy TV at Grandma's
-![screenshot of NostalgiaBox showing Happy Days in a 70s living room](happydays.png)
+![screenshot of NostalgiaBox showing The Pink Panther cartoon in a 70s living room](pinkpanther.png)
 
 # What is this?
 It's a media viewer intended to bring the user back to the comfy cozy comforts of childhood.
